@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Invest Management application to manage user account and investment accounts
+Resources:
+  ElasticSearchCloudWatch:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./target/ElasticSearchSpringBoot-1.0-SNAPSHOT.jar
+      FunctionName: searchChatLogs
+      Handler: com.orientalbank.chatbot.application.StreamLambdaHandler
+      Runtime: java8
+      Description: Register user
+      MemorySize: 512
+      Timeout: 20
+      # Function's execution role
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Tracing: Active
+  

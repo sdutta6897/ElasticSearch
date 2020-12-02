@@ -1,0 +1,17 @@
+aws:
+  paramstore:
+    enabled: true
+    name: elasticsearch
+    prefix: /config
+    profile-separator: '-'
+
+cloud:
+  aws:
+    region:
+      static: us-east-1
+    stack:
+      auto: false
+spring:
+  profiles:
+    active : dev
+  
